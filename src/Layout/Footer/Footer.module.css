@@ -1,0 +1,73 @@
+.footer{
+    padding: 40px 0 !important;
+    background-color: #1c5b7a !important;
+}
+
+.logo{
+    width: 200px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.title{
+    color: #fff !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    margin-bottom: 30px !important;
+}
+
+.title.sdt{
+    color: #00a3c8 !important;
+}
+
+.icon{
+    color: #fff !important;
+    border: 1px solid #fff !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.4s;
+}
+
+.icon.facebook:hover{
+    background-color: #3b5998 !important;
+    border-color: #3b5998 !important;
+}
+
+.icon.twitter:hover{
+    background-color: #00a9ed !important;
+    border-color: #00a9ed !important;
+}
+
+.icon.linked:hover{
+    background-color: #015886 !important;
+    border-color: #015886 !important;
+}
+
+.icon.tumblr:hover{
+    background-color: #3a5976 !important;
+    border-color: #3a5976 !important;
+}
+
+.text{
+    color: #fff !important;
+    font-size: 16px !important;
+    font-weight: 300;
+}
+
+.text span{
+    font-weight: 500;
+}
+
+.text a {
+    color: #fff !important;
+    text-decoration: underline !important;
+    font-weight: 500 !important; 
+}
+
+.copy-right{
+    color: #fff !important;
+    font-size: 16px;
+    font-weight: 300;
+}

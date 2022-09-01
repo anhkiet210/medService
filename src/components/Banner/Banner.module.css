@@ -1,0 +1,160 @@
+.top-banner {
+    padding-top: 70px !important;
+}
+
+.text-title {
+    color: #004861 !important;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.main-title {
+    font-size: 4rem !important;
+    font-weight: 700 !important;
+    margin: 20px 0 !important;
+    color: #004861 !important;
+}
+
+.text-banner {
+    font-size: 20px !important;
+    font-weight: 300;
+    color: #1063af !important;
+}
+
+.btn-banner {
+    background-color: #0e8eab !important;
+    height: auto !important;
+    padding: 8px 16px !important;
+    font-size: 16px !important;
+    color: #fff !important;
+    font-weight: 500;
+    border-radius: 10px !important;
+    border: none !important;
+    transition: all 0.4s !important;
+}
+
+.btn-banner:hover {
+    background-color: #00a3c8 !important;
+}
+
+.wrap-info-table {
+    position: relative;
+    transform: translateY(-40%);
+}
+
+.info-table-item {
+    padding: 30px 20px !important;
+}
+
+.info-table-item.working-time {
+    background-color: #36a8eb !important;
+    border-radius: 10px 0 0 10px !important;
+}
+
+.info-table-item.doctor-timetable {
+    background-color: #088edd !important;
+}
+
+.info-table-item.appointment {
+    background-color: #1977cc !important;
+}
+
+.info-table-item.emergency {
+    border-radius: 0 10px 10px 0 !important;
+    background-color: #1063af !important;
+}
+
+.title {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    margin-bottom: 10px !important;
+    color: #fff !important;
+}
+
+.text {
+    font-size: 16px !important;
+    font-weight: 300 !important;
+    color: #fff !important;
+}
+
+.text span {
+    font-weight: 500 !important;
+    color: #fff !important;
+}
+
+.info-table-btn {
+    color: #fff !important;
+    border: 2px solid #fff !important;
+    height: auto !important;
+    padding: 7px 16px !important;
+    background-color: transparent !important;
+    border-radius: 10px !important;
+}
+
+.wrap-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 576px) {
+    .wrap-text{
+        text-align: center !important;
+    }
+
+    .main-title{
+        font-size: 3rem !important; 
+    }
+
+    .text-banner{
+        font-size: 14px !important;
+    }
+
+    .wrap-info-table{
+        transform: translateY(-3%) !important;
+    }
+
+    .info-table-item.working-time,    
+    .info-table-item.doctor-timetable,
+    .info-table-item.appointment,
+    .info-table-item.emergency {
+        border-radius: 10px !important;
+        margin-bottom: 10px !important;
+    }
+}
+
+/* @media screen and (max-width: 768px) {
+    .wrap-info-table{
+        transform: translateY(-5%) !important;
+    }
+
+    .info-table-item.working-time,    
+    .info-table-item.doctor-timetable,
+    .info-table-item.appointment,
+    .info-table-item.emergency {
+        border-radius: 10px !important;
+        margin-bottom: 10px !important;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .wrap-info-table{
+        transform: translateY(-10%) !important;
+    }
+
+    .info-table-item.working-time{
+        border-radius: 10px 0 0 0 !important;
+    }   
+
+    .info-table-item.doctor-timetable{
+        border-radius: 0 10px 0 0 !important;
+    }
+
+    .info-table-item.appointment{
+        border-radius: 0 0 0 10px !important;
+    }
+
+    .info-table-item.emergency {
+        border-radius: 0 0 10px 0 !important;
+    }
+} */

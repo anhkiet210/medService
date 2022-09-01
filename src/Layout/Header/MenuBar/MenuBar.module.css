@@ -1,0 +1,36 @@
+.menu-bar{
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+.menu{
+    border-bottom: none !important;
+}
+
+.menu-item {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0 10px !important;
+    color:#666;
+}
+
+.menu-item:hover{
+    color: #00a3c8 !important;
+    border-bottom: none !important;
+}
+
+.wrap-btn{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: end !important;
+}
+
+.btn-appoitment{
+    background-color: #00a3c8 !important;
+    border: none !important;
+    color: #fff !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    padding: 8px !important;
+    height: auto !important;
+}

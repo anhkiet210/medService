@@ -1,0 +1,28 @@
+.wrap-text{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+
+.wrap-text img {
+    width: 200px;
+    object-fit: contain;
+}
+
+.text-title {
+    color: #004861 !important;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.main-title {
+    font-size: 3rem !important;
+    font-weight: 700 !important;
+    margin: 20px 0 !important;
+    color: #004861 !important;
+}
+
+.text-banner {
+    font-size: 16px !important;
+    font-weight: 300;
+}
