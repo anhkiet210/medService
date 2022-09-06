@@ -1,0 +1,11 @@
+.bread-crumb{
+    padding: 40px 10px;
+    background-image: url(../../img/breadcrumb.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.title-page{
+    font-size: 30px;
+    font-weight: 700;
+}

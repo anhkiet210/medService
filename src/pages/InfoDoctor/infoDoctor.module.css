@@ -1,0 +1,84 @@
+table {
+    width: 100%;
+    min-width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+table tr th{
+    text-align: left;
+}
+
+table tr th,
+table tr td {
+    width: 50%;
+    padding: 15px;
+}
+
+table tr:nth-child(odd){
+    background-color: #ececec;
+
+}
+
+table tr:nth-child(even){
+    background-color: #f9f9f9;
+}
+
+.info-contact{
+    text-align: center !important;
+    width: 100% !important;
+    margin: 20px 0 !important;
+}
+
+.title{
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-contact button {
+    width: 100%;
+    padding: 10px 15px;
+    height: auto !important; 
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.4s;
+}
+
+.info-contact button.btn-book{
+    background-color: #0e8eab;
+    color: #fff !important;
+}
+
+.info-contact button.btn-book:hover{
+    background-color: #00a3c8;
+    border-color: #00a3c8;
+}
+
+.info-contact button.btn-view{
+    background-color: transparent;
+    border-color: #333;
+}
+
+.info-contact button.btn-view:hover{
+    background-color: #333 !important;
+    border-color: #333 !important;
+    color: #fff;
+}
+
+.text{
+    font-size: 16px;
+    color: #000;
+    vertical-align: middle;
+}
+
+.text-tile {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    margin: 20px 0 !important;
+    color: #00a3c8 !important;
+}
