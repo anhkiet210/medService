@@ -1,6 +1,6 @@
 import Banner from "../../components/Banner";
-import Layout from "../../Layout";
-import { Row, Col, Typography, List, Button, Space } from "antd";
+import Layout from "../../layouts/Layout";
+import { Row, Col, Typography, List, Button, Space, Modal } from "antd";
 import style from "./Home.module.css";
 import classNames from "classnames/bind";
 import img04 from "../../img/image-04.png";
@@ -71,6 +71,19 @@ function Home() {
 
   const handleIdxTab = (id) => {
     setIdxTab(id);
+  };
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -513,6 +526,7 @@ function Home() {
             </div>
           </Col>
         </Row>
+
       </Layout>
     </>
   );

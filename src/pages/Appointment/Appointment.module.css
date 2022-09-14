@@ -1,0 +1,110 @@
+.wrap-appointment,
+.wrap-info-doctor {
+  padding: 30px;
+}
+
+.title {
+  font-size: 2.5rem !important;
+  color: #004861 !important;
+  font-weight: 700 !important;
+}
+
+.text {
+  font-size: 17px !important;
+  font-weight: 300 !important;
+}
+
+.form-input {
+  width: 100% !important;
+}
+
+.btn-submit {
+  width: 100% !important;
+  padding: 10px 20px !important;
+  height: auto !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: #fff !important;
+  background-color: #00a3c8 !important;
+  border-color: #00a3c8 !important;
+  border-radius: 8px !important;
+}
+
+.btn-submit:hover {
+  background-color: #0e8eab !important;
+  border-color: #0e8eab !important;
+}
+
+.wrap-info-doctor__title {
+  color: #004861 !important;
+  font-size: 19px !important;
+  font-weight: 700 !important;
+}
+
+.info-doctor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-doctor img {
+  max-width: 140px;
+}
+
+.info-doctor__name {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #004861 !important;
+}
+
+.info-doctor__job {
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  color: #666 !important;
+}
+.info-doctor__phone {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #00a3c8 !important;
+  margin-top: 0px !important;
+}
+
+.wrap-info-doctor .text {
+  font-size: 15px !important;
+  margin-top: 10px !important;
+}
+
+.wrap-working-time {
+  padding: 40px;
+  background-color: #00a3c8;
+  border-radius: 8px;
+}
+
+.wrap-working-time table tr {
+  background-color: transparent !important;
+  color: #fff !important;
+  font-weight: 500;
+  border-bottom: 1px dashed #fff;
+}
+
+.wrap-working-time table tr:last-child {
+  border-bottom: none;
+}
+
+.wrap-working-time table tr td:nth-child(2) {
+  width: max-content;
+}
+
+.wrap-working-time table tr td:nth-child(3) {
+  text-align: end;
+}
+
+.working-title {
+  font-size: 20px !important;
+  color: #fff !important;
+  font-weight: 500 !important;
+}
+
+.wrap-working-time .text {
+  color: #fff !important;
+}

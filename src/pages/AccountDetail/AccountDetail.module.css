@@ -1,0 +1,17 @@
+.btn-save-changes {
+    height: auto !important;
+    padding: 8px 30px !important;
+    background-color: #ebe9eb !important;
+    color: #515151 !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    border-radius: 8px !important;
+    border: none !important;
+    transition: 0.4s;
+}
+
+.btn-save-changes:hover{
+    background-color: #00a3c8 !important;
+    color: #fff !important;
+}

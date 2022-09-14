@@ -2,7 +2,7 @@ import { Button, Col, Divider, Image, List, Row, Space, Typography } from "antd"
 import style from "./infoDoctor.module.css";
 import classNames from "classnames/bind";
 import BreadCrumb from "../../components/BreadCrumb";
-import Layout from "../../Layout";
+import Layout from "../../layouts/Layout";
 import { FaMobileAlt, FaEnvelope, FaAngleDoubleRight } from "react-icons/fa";
 
 const cx = classNames.bind(style);

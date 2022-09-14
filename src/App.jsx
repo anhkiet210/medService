@@ -3,7 +3,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { publicRoutes } from "./routes";
+import { privateRoutes, publicRoutes } from "./routes";
 import 'antd/dist/antd.css';
 
 function App() {
@@ -13,6 +13,12 @@ function App() {
         <Routes>
           {
             publicRoutes.map((route, index) => {
+              const Page = route.component
+              return <Route key={index} path={route.path} element={<Page />} />
+            })
+          }
+          {
+            privateRoutes.map((route, index) => {
               const Page = route.component
               return <Route key={index} path={route.path} element={<Page />} />
             })

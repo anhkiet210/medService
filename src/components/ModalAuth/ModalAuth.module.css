@@ -1,0 +1,61 @@
+.wrap-register-form, 
+.wrap-login-form{
+    width: 100%;
+    padding: 20px;
+}
+
+.wrap-register-form .text {
+    font-size: 16px !important;
+}
+
+.wrap-register-form .info-booking {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.info-booking .name-doctor{
+    font-size: 16px !important;
+    color: #00a3c8 !important;
+    font-weight: 500 !important;
+}
+
+.info-booking .info-time{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px !important;
+    font-weight: 300 !important;
+}
+
+.wrap-register-form .form-title {
+    width: 100%;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.form-title .icon {
+    color: red;
+    font-size: 10px;
+}
+
+.wrap-login-form .title {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    margin-bottom: 20px !important;
+}
+
+.btn-submit {
+    background-color: #00a3c8 !important;
+    color: #fff !important;
+    transition: 0.4s;
+}
+
+.btn-submit:hover{
+    transform: translateY(-4px);
+}
