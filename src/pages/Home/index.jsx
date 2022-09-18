@@ -1,21 +1,21 @@
-import Banner from "../../components/Banner";
-import Layout from "../../layouts/Layout";
-import { Row, Col, Typography, List, Button, Space, Modal } from "antd";
-import style from "./Home.module.css";
+import { Button, Col, List, Row, Space, Typography } from "antd";
 import classNames from "classnames/bind";
-import img04 from "../../img/image-04.png";
+import { useState } from "react";
 import { FaAngleDoubleRight, FaDotCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import stethoscope from "../../img/stethoscope.png";
+import Banner from "../../components/Banner";
 import blood from "../../img/blood.png";
-import mri from "../../img/mri.png";
-import lungs from "../../img/lungs.png";
-import { useState } from "react";
-import pediatrics from "../../img/pediatrics_700x700.jpg";
 import hematology from "../../img/hematology_700x700.jpg";
+import img04 from "../../img/image-04.png";
+import lungs from "../../img/lungs.png";
+import mri from "../../img/mri.png";
 import mri2 from "../../img/mri_700x700.jpg";
+import pediatrics from "../../img/pediatrics_700x700.jpg";
+import stethoscope from "../../img/stethoscope.png";
 import xRay from "../../img/x-ray_700x700.jpg";
+import Layout from "../../layouts/Layout";
 import ContentTab from "./component/ContentTab";
+import style from "./Home.module.css";
 
 const cx = classNames.bind(style);
 
@@ -73,25 +73,12 @@ function Home() {
     setIdxTab(id);
   };
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
-
   return (
     <>
       <Layout>
         <Banner />
         <Row justify="center">
-          <Col span={18}>
+          <Col xs={22} sm={22} md={18}>
             <Row>
               <Col
                 xs={24}
@@ -143,7 +130,7 @@ function Home() {
           </Col>
         </Row>
         <Row justify="center">
-          <Col span={18}>
+          <Col xs={22} sm={22} md={18}>
             <Row>
               <Col
                 xs={24}
@@ -273,7 +260,13 @@ function Home() {
         </Row>
 
         <Row justify="center">
-          <Col span={18} style={{ textAlign: "center", padding: "50px 0" }}>
+          <Col
+            xs={22}
+            sm={22}
+            md={18}
+            style={{ textAlign: "center", padding: "50px 0" }}
+            className={cx("wrap-list-card")}
+          >
             <Space direction="vertical">
               <Typography.Title className={cx("main-title")}>
                 Our Medical Specialists
@@ -456,7 +449,7 @@ function Home() {
         </Row>
 
         <Row justify="center">
-          <Col span={18} style={{ padding: "80px 0" }}>
+          <Col xs={22} sm={22} md={18} style={{ padding: "80px 0" }}>
             <ul className={cx("list-tab")}>
               {listTab.map((item) => (
                 <li
@@ -526,7 +519,6 @@ function Home() {
             </div>
           </Col>
         </Row>
-
       </Layout>
     </>
   );

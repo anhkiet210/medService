@@ -27,7 +27,7 @@ function Banner() {
                 </Col>
             </Row>
             <Row justify='center' className={cx('wrap-info-table')}>
-                <Col span={18}>
+                <Col xs={22} sm={22} md={18}>
                     <Row>
                         <Col xs={24} sm={24} md={12} lg={6} xl={6} xxl={6} className={cx('info-table-item', 'working-time')}>
                             <Typography.Title className={cx('title')}>Working Time</Typography.Title>
