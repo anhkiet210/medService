@@ -2,6 +2,7 @@ import { Button, Row, Typography } from "antd";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import LayoutMyAccount from "../../layouts/LayoutMyAccount";
+import * as authService from '../../services/authService';
 
 const data = [
   {
@@ -28,9 +29,13 @@ function MyAccount() {
     setIdxTab(idx);
   };
 
-  const handleLogout = () => {
-    console.log("logout");
-  };
+  const handleLogout = async () => {
+    const res = await authService.logout()
+    if(res && res.status === 'SUCCESS'){
+      localStorage.removeItem('accessToken')
+    }
+    console.log(res);
+  }
 
   console.log(idxTab);
 
@@ -47,7 +52,7 @@ function MyAccount() {
         >
           Hello <Typography.Text strong={true}>user name</Typography.Text> (not{" "}
           <Typography.Text strong={true}>user name</Typography.Text>? 
-          <Button style={{backgroundColor: 'transparent', border: 'none', fontSize: '17px', color: '#00a3c8', fontWeight: '300', padding: '0'}}>Log out</Button>)
+          <Button style={{backgroundColor: 'transparent', border: 'none', fontSize: '17px', color: '#00a3c8', fontWeight: '300', padding: '0'}} onClick={handleLogout}>Log out</Button>)
         </Typography.Text>
         <Typography.Paragraph
           style={{

@@ -3,6 +3,7 @@ import { Row, Col, Typography, Button, Divider } from 'antd'
 import classNames from 'classnames/bind'
 import style from './Banner.module.css'
 import { FaPhone } from 'react-icons/fa'
+import imgBanner from '../../img/hero-1-img.png'
 
 const cx = classNames.bind(style)
 
@@ -21,7 +22,7 @@ function Banner() {
                             <Button className={cx('btn-banner')}>More About Clinic</Button>
                         </Col>
                         <Col xs={24} sm={24} md={24} lg={12} xl={12} xxl={12} className={cx('wrap-img')}>
-                            <img src="https://jthemes.org/wp/medservices/wp-content/themes/medservice/images/hero-1-img.png" alt="" />
+                            <img src={imgBanner} alt="" />
                         </Col>
                     </Row>
                 </Col>

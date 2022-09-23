@@ -59,8 +59,6 @@ function ModalAuth({ isModalOpen, onCloseModal }) {
       console.log(res);
     }
 
-    console.log(token);
-
     return (
         <>
             <Modal
@@ -84,7 +82,6 @@ function ModalAuth({ isModalOpen, onCloseModal }) {
                     <Radio value={1}>New customer</Radio>
                     <Radio value={2}>Current customer</Radio>
                 </Radio.Group>
-                <Button onClick={logout}>logout</Button>
                 {isNewCustomer === 1 && (
                     <div className={cx('wrap-register-form')}>
                         <Typography.Text className={cx('text')}>

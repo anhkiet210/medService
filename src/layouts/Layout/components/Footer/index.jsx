@@ -2,6 +2,7 @@ import { Col, Row, Typography, Button, Space } from "antd";
 import classNames from "classnames/bind";
 import style from './Footer.module.css'
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaTumblr } from 'react-icons/fa'
+import logo from '../../../../img/logo.png'
 
 const cx = classNames.bind(style)
 
@@ -12,7 +13,7 @@ function Footer() {
                 <Col span={18} style={{ borderBottom: '1px solid #ccc', padding: '20px 0' }}>
                     <Row>
                         <Col xs={24} sm={24} md={12} lg={6} xl={6} xxl={6} style={{ padding: '10px' }}>
-                            <img src="https://jthemes.org/wp/medservices/wp-content/themes/medservice/images/footer-logo-white.png" alt="" className={cx('logo')} />
+                            <img src={logo} alt="" className={cx('logo')} />
                             <Typography.Paragraph className={cx('text')}>
                                 Aliquam orci nullam tempor sapien gravida donec an enim ipsum porta justo at velna auctor congue
                             </Typography.Paragraph>
