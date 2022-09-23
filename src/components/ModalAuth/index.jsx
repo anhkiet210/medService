@@ -6,13 +6,15 @@ import { FaAsterisk, FaCalendarAlt } from 'react-icons/fa';
 import styles from './ModalAuth.module.css';
 import * as authService from '../../services/authService';
 import * as validateMessages from '../../utils/message';
+import { useNavigate } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
 function ModalAuth({ isModalOpen, onCloseModal }) {
     const [isNewCustomer, setIsNewCustomer] = useState(1);
     const [form] = Form.useForm();
-    const token = localStorage.getItem('accessToken')
+    const token = localStorage.getItem('accessToken');
+    const navigate = useNavigate()
 
     const onChange = (e) => {
         setIsNewCustomer(e.target.value);
@@ -32,11 +34,12 @@ function ModalAuth({ isModalOpen, onCloseModal }) {
     };
 
     const handleLogin = async (value) => {
-        console.log(value);
+        console.log(typeof value);
         const res = await authService.login(value);
         if (res && res.status === 'SUCCESS') {
             localStorage.setItem('accessToken', res.data.accessToken);
             onCloseModal();
+            navigate("/")
         }
 
         if (res && res.status === 'FAILED' && res.data) {
@@ -52,12 +55,12 @@ function ModalAuth({ isModalOpen, onCloseModal }) {
     };
 
     const logout = async () => {
-      const res = await authService.logout()
-      if(res && res.status === 'SUCCESS'){
-        localStorage.removeItem('accessToken')
-      }
-      console.log(res);
-    }
+        const res = await authService.logout();
+        if (res && res.status === 'SUCCESS') {
+            localStorage.removeItem('accessToken');
+        }
+        console.log(res);
+    };
 
     return (
         <>
