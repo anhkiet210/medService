@@ -26,7 +26,7 @@ function ModalAuth({ isModalOpen, onCloseModal }) {
         try {
             setLoadingReg(true)
             const res = await authService.register(value);
-            setLoadingReg(false)
+            setLoadingReg(false )
             if (res.status === 'SUCCESS') {
                 message.success('Register success!');
                 setIsNewCustomer(2);
