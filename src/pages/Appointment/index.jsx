@@ -33,7 +33,7 @@ const listDoctors = [
 function Appointment() {
     const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);
-    const formatDate = 'YYYY-MM-DD hh-mm';
+    const formatDate = 'YYYY-MM-DD HH:mm';
 
     const handleBooking = async (value) => {
         try {
@@ -55,7 +55,7 @@ function Appointment() {
             }
         } catch (error) {
             console.log(error);
-            setLoading(false)
+            setLoading(false);
         }
     };
 
@@ -104,7 +104,10 @@ function Appointment() {
                                                 },
                                             ]}
                                         >
-                                            <DatePicker showTime className={cx('form-input')} formatDate={formatDate} />
+                                            <DatePicker
+                                                showTime={{format: 'HH:mm', minuteStep: 5}}
+                                                className={cx('form-input')}
+                                            />
                                         </Form.Item>
                                         <Form.Item
                                             name="bookedTime"
@@ -130,7 +133,11 @@ function Appointment() {
                                             // }}
                                         >
                                             {/* <CKEditor editor={ClassicEditor} /> */}
-                                            <TextArea rows={4} placeholder="Content booking" className={cx('form-input')}/>
+                                            <TextArea
+                                                rows={4}
+                                                placeholder="Content booking"
+                                                className={cx('form-input')}
+                                            />
                                         </Form.Item>
                                         <Form.Item>
                                             <Button htmlType="submit" className={cx('btn-submit')} loading={loading}>
