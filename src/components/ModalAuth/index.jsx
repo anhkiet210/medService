@@ -2,49 +2,64 @@ import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { Button, Form, Input, InputNumber, message, Modal, Radio, Space, Typography } from 'antd';
 import classNames from 'classnames/bind';
 import React, { useState } from 'react';
-import { FaAsterisk, FaCalendarAlt } from 'react-icons/fa';
+import { FaAsterisk, FaCalendarAlt, FaSlack } from 'react-icons/fa';
 import styles from './ModalAuth.module.css';
 import * as authService from '../../services/authService';
 import * as validateMessages from '../../utils/message';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import { setToken } from '../../utils/jwt';
 
 const cx = classNames.bind(styles);
 
 function ModalAuth({ isModalOpen, onCloseModal }) {
     const [isNewCustomer, setIsNewCustomer] = useState(1);
     const [form] = Form.useForm();
-    const token = localStorage.getItem('accessToken');
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
+    const [loadingReg, setLoadingReg] = useState(false);
 
     const onChange = (e) => {
         setIsNewCustomer(e.target.value);
     };
 
     const handleRegister = async (value) => {
-        const res = await authService.register(value);
-        if (res.status === 'SUCCESS') {
-            message.success('Register success!');
-            setIsNewCustomer(2);
-        }
+        try {
+            setLoadingReg(true)
+            const res = await authService.register(value);
+            setLoadingReg(false)
+            if (res.status === 'SUCCESS') {
+                message.success('Register success!');
+                setIsNewCustomer(2);
+            }
 
-        if (res.status === 'FAILED') {
-            message.error(res.message);
+            if (res.status === 'FAILED') {
+                message.error(res.message);
+            }
+        } catch (error) {
+            console.log(error);
+            setLoadingReg(false);
         }
-        console.log(res);
+        // console.log(res);
     };
 
     const handleLogin = async (value) => {
-        console.log(typeof value);
+        const formatValue = JSON.stringify(value);
+        console.log(formatValue);
+        setLoading(true);
         const res = await authService.login(value);
+        setLoading(false);
         if (res && res.status === 'SUCCESS') {
             localStorage.setItem('accessToken', res.data.accessToken);
+            const token = JSON.stringify(res.data.accessToken);
+            setToken(res.data.accessToken);
             onCloseModal();
-            navigate("/")
+            navigate('/');
         }
 
         if (res && res.status === 'FAILED' && res.data) {
             message.warn('You are logged in');
             onCloseModal();
+            navigate('/my-account');
         }
 
         console.log(res);
@@ -235,7 +250,9 @@ function ModalAuth({ isModalOpen, onCloseModal }) {
               </Form.Item> */}
 
                             <Space style={{ marginTop: '30px' }}>
-                                <Input type="submit" value={'Request Appointment'} className={cx('btn-submit')} />
+                                <Button htmlType="submit" className={cx('btn-submit')} loading={loadingReg}>
+                                    Request Appointment
+                                </Button>
                                 <Button type="text">Cancel</Button>
                             </Space>
                         </Form>
@@ -269,7 +286,7 @@ function ModalAuth({ isModalOpen, onCloseModal }) {
                                 />
                             </Form.Item>
                             <Space style={{ marginTop: '20px' }}>
-                                <Button htmlType="submit" className={cx('btn-submit')}>
+                                <Button htmlType="submit" className={cx('btn-submit')} loading={loading}>
                                     Sign in
                                 </Button>
                                 <Button type="text">Cancel</Button>

@@ -1,6 +1,7 @@
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import { Button, Col, DatePicker, Divider, Form, InputNumber, message, Row, Select, Typography } from 'antd';
+import TextArea from 'antd/lib/input/TextArea';
 import classNames from 'classnames/bind';
 import { useState } from 'react';
 import Layout from '../../layouts/Layout';
@@ -32,22 +33,29 @@ const listDoctors = [
 function Appointment() {
     const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);
+    const formatDate = 'YYYY-MM-DD hh-mm';
 
     const handleBooking = async (value) => {
-        const dateNow = new Date().getTime();
-        const time = value.bookedAt._d.valueOf();
-        value.bookedAt = time;
-        // console.log('value', value);
-        if (dateNow < time) {
-            setLoading(true);
-            const res = await booking(value);
-            if (res.status === 'SUCCESS') {
-                message.success('Booking success!');
-                form.resetFields();
+        try {
+            // console.log(value);
+            const dateNow = new Date().getTime();
+            const time = value.bookedAt._d.valueOf();
+            value.bookedAt = time;
+            console.log('value', value);
+            if (dateNow < time) {
+                setLoading(true);
+                const res = await booking(value);
+                if (res.status === 'SUCCESS') {
+                    message.success('Booking success!');
+                    form.resetFields();
+                }
+                setLoading(false);
+            } else {
+                message.warning('Appointment must be after the current date');
             }
-            setLoading(false);
-        } else {
-            message.warning('Appointment must be after the current date');
+        } catch (error) {
+            console.log(error);
+            setLoading(false)
         }
     };
 
@@ -96,7 +104,7 @@ function Appointment() {
                                                 },
                                             ]}
                                         >
-                                            <DatePicker showTime className={cx('form-input')} />
+                                            <DatePicker showTime className={cx('form-input')} formatDate={formatDate} />
                                         </Form.Item>
                                         <Form.Item
                                             name="bookedTime"
@@ -115,13 +123,14 @@ function Appointment() {
                                                     required: true,
                                                 },
                                             ]}
-                                            valuePropName="data"
-                                            getValueFromEvent={(event, editor) => {
-                                                const data = editor.getData();
-                                                return data;
-                                            }}
+                                            // valuePropName="data"
+                                            // getValueFromEvent={(event, editor) => {
+                                            //     const data = editor.getData();
+                                            //     return data;
+                                            // }}
                                         >
-                                            <CKEditor editor={ClassicEditor} />
+                                            {/* <CKEditor editor={ClassicEditor} /> */}
+                                            <TextArea rows={4} placeholder="Content booking" className={cx('form-input')}/>
                                         </Form.Item>
                                         <Form.Item>
                                             <Button htmlType="submit" className={cx('btn-submit')} loading={loading}>

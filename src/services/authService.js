@@ -1,4 +1,8 @@
 import * as request from '../utils/request';
+const token = localStorage.getItem("accessToken") || ""
+const headers = {
+    Authorization: `Beaer ${token}`
+}
 
 export const register = async (info) => {
     try {
@@ -20,7 +24,7 @@ export const login = async (user) => {
 
 export const logout = async () => {
     try {
-        const res = await request.post('/logout');
+        const res = await request.post('/logout', {headers: headers});
         return res.data;
     } catch (err) {
         console.log(err);

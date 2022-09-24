@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import LayoutMyAccount from "../../layouts/LayoutMyAccount";
 import * as authService from '../../services/authService';
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const data = [
   {
@@ -24,15 +26,25 @@ const data = [
 
 function MyAccount() {
   const [idxTab, setIdxTab] = useState(1);
+  const navigate = useNavigate()
 
-  const handleChangeTab = (idx) => {
-    setIdxTab(idx);
-  };
+  // const handleChangeTab = (idx) => {
+  //   setIdxTab(idx);
+  // };
+
+  useEffect(() => {
+    const token = localStorage.getItem("accessToken")
+    if(!token){
+      navigate("/")
+    }
+  }, [])
+  
 
   const handleLogout = async () => {
     const res = await authService.logout()
     if(res && res.status === 'SUCCESS'){
       localStorage.removeItem('accessToken')
+      navigate('/')
     }
     console.log(res);
   }
