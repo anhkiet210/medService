@@ -1,0 +1,26 @@
+.post-item-small {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.post-item-small__img {
+    max-width: 100px;
+}
+.post-item-small__title {
+    font-size: 17px !important;
+    font-weight: 500 !important;
+}
+
+.post-item-small__title a {
+    color: #555 !important;
+}
+
+.post-item-small__title a:hover{
+    text-decoration: underline !important;
+}
+
+.post-item-small__time {
+    font-size: 16px !important;
+    font-weight: 300 !important;
+}

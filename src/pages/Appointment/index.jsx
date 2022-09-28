@@ -4,6 +4,7 @@ import { Button, Col, DatePicker, Divider, Form, InputNumber, message, Row, Sele
 import TextArea from 'antd/lib/input/TextArea';
 import classNames from 'classnames/bind';
 import { useState } from 'react';
+import ThumnailInfoDoctor from '../../components/ThumnailInfoDoctor';
 import Layout from '../../layouts/Layout';
 import { booking } from '../../services/appointmentService';
 import * as validateMessages from '../../utils/message';
@@ -155,33 +156,7 @@ function Appointment() {
                             </Col>
 
                             <Col xs={24} sm={24} md={24} lg={8}>
-                                <div className={cx('wrap-info-doctor')}>
-                                    <Typography.Title className={cx('wrap-info-doctor__title')}>
-                                        The Heart Of Clinic
-                                    </Typography.Title>
-                                    <Divider />
-                                    <div className={cx('info-doctor')}>
-                                        <img
-                                            src="https://jthemes.net/themes/wp/medservices/wp-content/uploads/2019/07/head-of-clinic.jpg"
-                                            alt=""
-                                        />
-                                        <div className="">
-                                            <Typography.Title level={2} className={cx('info-doctor__name')}>
-                                                Dr. Jonathan Barnes
-                                            </Typography.Title>
-                                            <Typography.Title level={5} className={cx('info-doctor__job')}>
-                                                Chief Medical Officer
-                                            </Typography.Title>
-                                            <Typography.Title level={2} className={cx('info-doctor__phone')}>
-                                                1-800-1234-567
-                                            </Typography.Title>
-                                        </div>
-                                    </div>
-                                    <Typography.Paragraph className={cx('text')}>
-                                        Aliquam orci nullam tempor sapien orci gravida donec enim ipsum porta justo
-                                        integer at velna vitae auctor integer congue
-                                    </Typography.Paragraph>
-                                </div>
+                                <ThumnailInfoDoctor />
                                 <div className={cx('wrap-working-time')}>
                                     <Typography.Title className={cx('working-title')}>Working Time</Typography.Title>
                                     <Typography.Paragraph className={cx('text')}>

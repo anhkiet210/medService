@@ -14,3 +14,21 @@
     min-height: 200px;
     max-height: 500px;
 }
+
+.btn-primary {
+    height: auto !important;
+    padding: 8px 20px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #fff !important;
+    background-color: #00a3c8 !important;
+    margin-top: 30px !important;
+    border-radius: 8px !important;
+    transition: 0.4s;
+    border-color: #00a3c8 !important;
+}
+
+.btn-primary:hover {
+    background-color: #333 !important;
+    border-color: #333 !important;
+}

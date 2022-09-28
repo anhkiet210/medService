@@ -32,13 +32,13 @@ function MyAccount() {
     //   setIdxTab(idx);
     // };
 
-    useEffect(() => {
-        const token = localStorage.getItem('accessToken');
-        if (!token) {
-            message('You are not logged in');
-            navigate('/');
-        }
-    }, []);
+    // const token = localStorage.getItem('accessToken');
+    // useEffect(() => {
+    //     if (!token) {
+    //         message('You are not logged in');
+    //         navigate('/');
+    //     }
+    // }, [token]);
 
     const handleLogout = async () => {
         const res = await authService.logout();

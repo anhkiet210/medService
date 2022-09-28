@@ -1,0 +1,42 @@
+.wrap-info-doctor {
+    padding: 30px;
+}
+
+.wrap-info-doctor__title {
+    color: #004861 !important;
+    font-size: 19px !important;
+    font-weight: 700 !important;
+}
+
+.info-doctor {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-doctor img {
+    max-width: 140px;
+}
+
+.info-doctor__name {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #004861 !important;
+}
+
+.info-doctor__job {
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    color: #666 !important;
+}
+.info-doctor__phone {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #00a3c8 !important;
+    margin-top: 0px !important;
+}
+
+.wrap-info-doctor .text {
+    font-size: 15px !important;
+    margin-top: 10px !important;
+}

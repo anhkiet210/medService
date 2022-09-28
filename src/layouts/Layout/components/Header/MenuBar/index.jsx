@@ -17,6 +17,11 @@ const menu = [
         name: 'My account',
         link: '/my-account',
     },
+    {
+        id: 3,
+        name: 'Blog',
+        link: '/blog',
+    },
 ];
 
 function MenuBar() {

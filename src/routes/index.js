@@ -4,7 +4,9 @@ import Home from "../pages/Home";
 import InfoDoctor from "../pages/InfoDoctor";
 import MyAccount from "../pages/MyAccount";
 import Orders from "../pages/Orders";
+import OurBlog from "../pages/OurBlog";
 import TimeTable from "../pages/TimeTable";
+
 
 const publicRoutes = [
   {
@@ -16,8 +18,12 @@ const publicRoutes = [
     component: InfoDoctor,
   },
   {
-    path: "time-table",
+    path: "/time-table",
     component: TimeTable,
+  },
+  {
+    path: "/blog",
+    component: OurBlog,
   },
 ];
 
@@ -41,3 +47,4 @@ const privateRoutes = [
 ];
 
 export { publicRoutes, privateRoutes };
+

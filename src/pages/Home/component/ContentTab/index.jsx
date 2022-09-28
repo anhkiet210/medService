@@ -61,7 +61,7 @@ function ContentTab({ data3, data4, img, title }) {
               )}
             />
           </Space>
-          <Button className={cx("btn-meet-all")}>View More Details</Button>
+          <Button className={cx("btn-primary")}>View More Details</Button>
         </Col>
       </Row>
     </>

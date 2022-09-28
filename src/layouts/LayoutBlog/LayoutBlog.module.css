@@ -1,0 +1,19 @@
+.wrapper {
+    padding: 30px;
+    width: 100%;
+}
+
+.title{
+    font-size: 18px !important;
+    font-family: 700 !important;
+    color: #222 !important;
+}
+
+.text {
+    font-size: 16px !important;
+    font-weight: 300 !important;
+}
+
+.text a {
+    color: #000;
+}
