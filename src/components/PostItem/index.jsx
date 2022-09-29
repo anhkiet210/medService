@@ -5,7 +5,7 @@ import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
 
-function PostItem() {
+function PostItem({ notMore }) {
     return (
         <>
             <div className={cx('post-item')}>
@@ -24,20 +24,21 @@ function PostItem() {
                 <Typography.Paragraph className={cx('post-item__discription')}>
                     Donec sodales, nibh vel tristique aliquet, nisi libero suscipit diam, sed tempus ante nulla ut
                     purus. Donec dolor magna, suscipit in magna dignissim, porttitor hendrerit. gravida ultrices felis …
-                    Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo….
-                    Donec sodales, nibh vel tristique aliquet, nisi libero suscipit diam, sed tempus ante nulla ut
-                    purus. Donec dolor magna, suscipit in magna dignissim, porttitor hendrerit. gravida ultrices felis …
-                    Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo….
-                    Donec sodales, nibh vel tristique aliquet, nisi libero suscipit diam, sed tempus ante nulla ut
-                    purus. Donec dolor magna, suscipit in magna dignissim, porttitor hendrerit. gravida ultrices felis …
-                    Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo….
-                    Donec sodales, nibh vel tristique aliquet, nisi libero suscipit diam, sed tempus ante nulla ut
-                    purus. Donec dolor magna, suscipit in magna dignissim, porttitor hendrerit. gravida ultrices felis …
-                    Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo….
+                    Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo…. Donec sodales, nibh vel
+                    tristique aliquet, nisi libero suscipit diam, sed tempus ante nulla ut purus. Donec dolor magna,
+                    suscipit in magna dignissim, porttitor hendrerit. gravida ultrices felis … Aliqum mullam blandit
+                    tempor sapien gravida donec ipsum, at porta justo…. Donec sodales, nibh vel tristique aliquet, nisi
+                    libero suscipit diam, sed tempus ante nulla ut purus. Donec dolor magna, suscipit in magna
+                    dignissim, porttitor hendrerit. gravida ultrices felis … Aliqum mullam blandit tempor sapien gravida
+                    donec ipsum, at porta justo…. Donec sodales, nibh vel tristique aliquet, nisi libero suscipit diam,
+                    sed tempus ante nulla ut purus. Donec dolor magna, suscipit in magna dignissim, porttitor hendrerit.
+                    gravida ultrices felis … Aliqum mullam blandit tempor sapien gravida donec ipsum, at porta justo….
                 </Typography.Paragraph>
-                <Link to={'/'} className={cx('post-item__more-detail')}>
-                    More Details
-                </Link>
+                {notMore !== 'notMore' && (
+                    <Link to={'/'} className={cx('post-item__more-detail')}>
+                        More Details
+                    </Link>
+                )}
             </div>
         </>
     );

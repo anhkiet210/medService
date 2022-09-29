@@ -1,0 +1,50 @@
+.wrap-post-detail {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.wrap-post-detail img {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.post-detail__tilte {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    color: #004861 !important;
+    margin: 0 !important;
+}
+
+.post-detail__timedoctor{
+    font-size: 1.1rem !important;
+    font-weight: 300 !important;
+    margin: 0 !important;
+}
+
+.post-detail__timedoctor span {
+    font-weight: 600;
+    color: #00a3c8;
+}
+
+.post-detail__content {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.related-post{
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.title {
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    color: #004861 !important;
+}
+
+.list-replate-post {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}

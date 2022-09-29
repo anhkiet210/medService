@@ -1,0 +1,23 @@
+.scroll-to-top {
+    width: 50px !important;
+    height: 50px !important;
+    right: -50px !important;
+    font-size: 1rem !important;
+    color: #fff !important;
+    background-color: rgba(10, 10, 10, 0.65) !important;
+    border: none !important;
+    border-radius: 50% !important;
+    outline: none !important;
+    transition: 0.4s linear !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.scroll-to-top:focus {
+    outline: none !important;
+}
+
+.scroll-to-top:hover {
+    background-color: #0da8cb !important;
+}

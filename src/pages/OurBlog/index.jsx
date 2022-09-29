@@ -1,7 +1,7 @@
 import LayoutBlog from '../../layouts/LayoutBlog'
 import classNames from 'classnames/bind'
 import styles from './OurBlog.module.css'
-import PostItem from './components/PostItem';
+import PostItem from '../../components/PostItem';
 
 const cx  = classNames.bind(styles)
 

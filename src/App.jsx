@@ -5,6 +5,8 @@ import {
 } from "react-router-dom";
 import { privateRoutes, publicRoutes } from "./routes";
 import 'antd/dist/antd.css';
+import ScrollTotop from "./components/ScrollToTop";
+import { BackTop } from "antd";
 
 function App() {
   return (
@@ -25,6 +27,9 @@ function App() {
           }
         </Routes>
       </BrowserRouter>
+      <BackTop>
+        <ScrollTotop />
+      </BackTop>
     </div>
   );
 }
