@@ -1,6 +1,4 @@
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import { Button, Col, DatePicker, Divider, Form, InputNumber, message, Row, Select, Typography } from 'antd';
+import { Button, Col, DatePicker, Form, InputNumber, message, Row, Select, Typography } from 'antd';
 import TextArea from 'antd/lib/input/TextArea';
 import classNames from 'classnames/bind';
 import { useState } from 'react';
@@ -34,15 +32,12 @@ const listDoctors = [
 function Appointment() {
     const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);
-    const formatDate = 'YYYY-MM-DD HH:mm';
 
     const handleBooking = async (value) => {
         try {
-            // console.log(value);
             const dateNow = new Date().getTime();
             const time = value.bookedAt._d.valueOf();
             value.bookedAt = time;
-            console.log('value', value);
             if (dateNow < time) {
                 setLoading(true);
                 const res = await booking(value);

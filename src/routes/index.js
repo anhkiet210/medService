@@ -1,5 +1,7 @@
 import AccountDetail from '../pages/AccountDetail';
 import Appointment from '../pages/Appointment';
+import Doctors from '../pages/Doctors';
+import FacemakDetection from '../pages/FacemaskDetection';
 import Home from '../pages/Home';
 import InfoDoctor from '../pages/InfoDoctor';
 import MyAccount from '../pages/MyAccount';
@@ -14,7 +16,7 @@ const publicRoutes = [
         component: Home,
     },
     {
-        path: '/info-doctor',
+        path: '/info-doctor/:id',
         component: InfoDoctor,
     },
     {
@@ -28,6 +30,14 @@ const publicRoutes = [
     {
         path: '/blog/:slug.:id.html',
         component: PostDetail,
+    },
+    {
+        path: '/doctors',
+        component: Doctors,
+    },
+    {
+        path: '/facemask-detection',
+        component: FacemakDetection,
     },
 ];
 

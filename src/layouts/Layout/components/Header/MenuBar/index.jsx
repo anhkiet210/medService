@@ -22,6 +22,11 @@ const menu = [
         name: 'Blog',
         link: '/blog',
     },
+    {
+        id: 4,
+        name: 'Facemask Detection',
+        link: '/facemask-detection',
+    },
 ];
 
 function MenuBar() {

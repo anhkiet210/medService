@@ -1,6 +1,6 @@
 import { Button, Col, List, Row, Space, Typography } from 'antd';
 import classNames from 'classnames/bind';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaAngleDoubleRight, FaDotCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Banner from '../../components/Banner';
@@ -14,7 +14,9 @@ import pediatrics from '../../img/pediatrics_700x700.jpg';
 import stethoscope from '../../img/stethoscope.png';
 import xRay from '../../img/x-ray_700x700.jpg';
 import Layout from '../../layouts/Layout';
+import { getAllDoctor } from '../../services/doctorService';
 import ContentTab from './component/ContentTab';
+import SectionDoctors from './component/SectionDoctors';
 import style from './Home.module.css';
 
 const cx = classNames.bind(style);
@@ -68,6 +70,20 @@ const data4 = [
 
 function Home() {
     const [idxTab, setIdxTab] = useState(1);
+    const [listDoctors, setListDoctors] = useState([]);
+    useEffect(() => {
+        const handleGetAllDoctors = async () => {
+            try {
+                const res = await getAllDoctor();
+                if (res.status === 'SUCCESS') {
+                    setListDoctors(res.data);
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        handleGetAllDoctors();
+    }, []);
 
     const handleIdxTab = (id) => {
         setIdxTab(id);
@@ -210,7 +226,7 @@ function Home() {
                     </Col>
                 </Row>
 
-                <Row justify="center">
+                {/* <Row justify="center">
                     <Col
                         xs={22}
                         sm={22}
@@ -295,9 +311,12 @@ function Home() {
                                 </div>
                             </Col>
                         </Row>
-                        <Button className="btn-primary">Meet All Doctors</Button>
+                        <Button className="btn-primary">
+                            <Link to="/doctors">Meet All Doctors</Link>
+                        </Button>
                     </Col>
-                </Row>
+                </Row> */}
+                <SectionDoctors listDoctors={listDoctors.slice(0, 4)} />
 
                 <Row justify="center">
                     <Col span={24} className={cx('img-bg-2')}>

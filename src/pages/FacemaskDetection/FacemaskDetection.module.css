@@ -1,0 +1,12 @@
+.wrapper {
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.frame {
+    width: 1000px;
+    height: 1000px;
+}
