@@ -12,7 +12,8 @@ function PostItem({ notMore, img, author, title, id, content, time }) {
             <div className={cx('post-item')}>
                 <img src={img} alt="" className={cx('post-item__img')} />
                 <Typography.Title className={cx('post-item__tilte')}>
-                    <Link to={`/blog/${changeUrl(title)}.${id}.html`}>{title}</Link>
+                    <Link to={`/blog/abc.1.html`}>{title}</Link>
+                    {/* <Link to={`/blog/${changeUrl(title)}.${id}.html`}>{title}</Link> */}
                 </Typography.Title>
                 <Typography.Title level={4} className={cx('post-item__timedoctor')}>
                     {' '}
@@ -20,7 +21,8 @@ function PostItem({ notMore, img, author, title, id, content, time }) {
                 </Typography.Title>
                 <Typography.Paragraph className={cx('post-item__discription')}>{content}</Typography.Paragraph>
                 {notMore !== 'notMore' && (
-                    <Link to={`/blog/${changeUrl(title)}.${id}.html`} className={cx('post-item__more-detail')}>
+                    <Link to={`/blog/abc.1.html`} className={cx('post-item__more-detail')}>
+                        {/* <Link to={`/blog/${changeUrl(title)}.${id}.html`} className={cx('post-item__more-detail')}> */}
                         More Details
                     </Link>
                 )}
