@@ -38,9 +38,9 @@ const data = [
 function LayoutBlog({ children }) {
     const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);
-    const [isModalOpen, setIsModalOpen] = useState(true);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [img, setImg] = useState();
-    const token = localStorage.getItem('accessToken')
+    const token = localStorage.getItem('accessToken');
 
     const handleCancel = () => {
         setIsModalOpen(false);
@@ -60,7 +60,6 @@ function LayoutBlog({ children }) {
             };
             const formData = new FormData();
             formData.append('file', value.uploadImg);
-            // const res = await axios.post('https://med-service-demo.herokuapp.com/api/upload', formData);
             const res = await upload(formData);
             console.log('img', res);
             const resUpdate = await createPost(info);
