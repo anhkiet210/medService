@@ -124,8 +124,8 @@ function Appointment() {
                                             ]}
                                         >
                                             <DatePicker
-                                                showTime={{ format: 'HH:mm', minuteStep: 5 }}
-                                                use12Hours={true}
+                                                // showTime={{ format: 'HH:mm', minuteStep: 5 }}
+                                                // use12Hours={true}
                                                 className={cx('form-input')}
                                             />
                                         </Form.Item>
