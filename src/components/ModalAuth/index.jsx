@@ -22,11 +22,15 @@ function ModalAuth({ isModalOpen, onCloseModal }) {
         setIsNewCustomer(e.target.value);
     };
 
+    const handleCancel = () => {
+        navigate('/');
+    };
+
     const handleRegister = async (value) => {
         try {
-            setLoadingReg(true)
+            setLoadingReg(true);
             const res = await authService.register(value);
-            setLoadingReg(false )
+            setLoadingReg(false);
             if (res.status === 'SUCCESS') {
                 message.success('Register success!');
                 setIsNewCustomer(2);
@@ -50,7 +54,6 @@ function ModalAuth({ isModalOpen, onCloseModal }) {
         setLoading(false);
         if (res && res.status === 'SUCCESS') {
             localStorage.setItem('accessToken', res.data.accessToken);
-            const token = JSON.stringify(res.data.accessToken);
             setToken(res.data.accessToken);
             onCloseModal();
             navigate('/');
@@ -84,6 +87,7 @@ function ModalAuth({ isModalOpen, onCloseModal }) {
                 visible={isModalOpen}
                 footer={null}
                 bodyStyle={{ maxHeight: '70vh', overflowY: 'scroll' }}
+                onCancel={handleCancel}
             >
                 <Radio.Group
                     onChange={onChange}

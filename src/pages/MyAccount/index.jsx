@@ -5,6 +5,7 @@ import LayoutMyAccount from '../../layouts/LayoutMyAccount';
 import * as authService from '../../services/authService';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import { getMyProfile } from '../../services/userService';
 
 const data = [
     {
@@ -27,18 +28,35 @@ const data = [
 function MyAccount() {
     const [idxTab, setIdxTab] = useState(1);
     const navigate = useNavigate();
+    const [user, setUser] = useState({});
 
     // const handleChangeTab = (idx) => {
     //   setIdxTab(idx);
     // };
 
     // const token = localStorage.getItem('accessToken');
-    // useEffect(() => {
-    //     if (!token) {
-    //         message('You are not logged in');
-    //         navigate('/');
-    //     }
-    // }, [token]);
+    useEffect(() => {
+        if (!localStorage.getItem('accessToken')) {
+            message.warning('You are not logged in');
+            navigate('/');
+        }
+    }, []);
+
+    useEffect(() => {
+        const handleGetMyProfile = async () => {
+            try {
+                const res = await getMyProfile();
+                if (res && res?.status === 'SUCCESS') {
+                    // console.log('res', res);
+                    setUser(res?.data);
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        handleGetMyProfile();
+    }, []);
 
     const handleLogout = async () => {
         const res = await authService.logout();
@@ -49,7 +67,7 @@ function MyAccount() {
         console.log(res);
     };
 
-    console.log(idxTab);
+    // console.log(idxTab);
 
     return (
         <>
@@ -62,8 +80,8 @@ function MyAccount() {
                             fontWeight: '300',
                         }}
                     >
-                        Hello <Typography.Text strong={true}>user name</Typography.Text> (not{' '}
-                        <Typography.Text strong={true}>user name</Typography.Text>?
+                        Hello <Typography.Text strong={true}>{user?.fullName}</Typography.Text> (not{' '}
+                        <Typography.Text strong={true}>{user?.fullName}</Typography.Text>?
                         <Button
                             style={{
                                 backgroundColor: 'transparent',

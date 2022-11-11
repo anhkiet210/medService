@@ -1,13 +1,24 @@
+import { Typography } from 'antd';
+import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 import LayoutBlog from '../../layouts/LayoutBlog';
 import styles from './PostDetail.module.css';
-import classNames from 'classnames/bind';
-import { Col, Divider, Row, Typography } from 'antd';
-import { Link } from 'react-router-dom';
-import PostItem from '../../components/PostItem'
+import { useParams } from 'react-router-dom';
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
 function PostDetail() {
+    const params = useParams();
+    console.log('post detail', params);
+    const [post, setPost] = useState({})
+    const handleGetPostById = async ()=> {
+        try {
+            
+        } catch (error) {
+            console.log(error);
+        }
+    }
     return (
         <>
             <LayoutBlog>
@@ -53,7 +64,7 @@ function PostDetail() {
                     consectetur, quod voluptatum architecto asperiores cumque sit repudiandae consequatur quos animi aut
                     provident in nam, nulla aspernatur ipsum eveniet dolorem at aliquam? Dolor, maxime aperiam.
                 </div>
-                <div className={cx('related-post')}>
+                {/* <div className={cx('related-post')}>
                     <Typography.Title className={cx('title')}>Related Posts</Typography.Title>
                     <Divider />
                     <div className={cx('list-replate-post')}>
@@ -62,7 +73,7 @@ function PostDetail() {
                         <PostItem notMore="notMore"/>
                         <PostItem notMore="notMore"/>
                     </div>
-                </div>
+                </div> */}
             </LayoutBlog>
         </>
     );

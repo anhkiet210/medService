@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { getToken } from './jwt';
 const token = localStorage.getItem('accessToken');
-const tokenLocal = JSON.stringify(token)
+// const tokenLocal = JSON.stringify(token)
 
 const request = axios.create({
     baseURL: 'https://med-service-demo.herokuapp.com/api',
@@ -10,7 +10,7 @@ const request = axios.create({
 request.interceptors.request.use(
     function (config = AxiosRequestConfig) {
         if (getToken() || token) {
-            config.headers.Authorization = `Bearer ${getToken() || tokenLocal}`;
+            config.headers.Authorization = `Bearer ${getToken() || token}`;
         } else {
             delete config.headers.Authorization;
         }

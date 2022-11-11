@@ -78,6 +78,7 @@ function Home() {
                 if (res.status === 'SUCCESS') {
                     setListDoctors(res.data);
                 }
+                console.log("home", res);
             } catch (error) {
                 console.log(error);
             }

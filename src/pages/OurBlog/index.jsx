@@ -5,6 +5,7 @@ import PostItem from '../../components/PostItem';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { getAllPost } from '../../services/postService';
+import formatDate from '../../utils/formatDate';
 
 const cx = classNames.bind(styles);
 
@@ -14,32 +15,35 @@ function OurBlog() {
         const handleGetAllPost = async () => {
             try {
                 const res = await getAllPost();
-                if (res.status === 'SUCCESS') {
+                if (res && res.status === 'SUCCESS') {
                     setListPosts(res.data);
                 }
-                console.log('list post', res);
+                // console.log('list post', res);
             } catch (error) {
                 console.log(error);
             }
         };
         handleGetAllPost();
     }, []);
+    console.log('listPost', listPosts);
     return (
         <>
-            <LayoutBlog>
+            <LayoutBlog setListPosts={setListPosts} listPosts={listPosts}>
                 <div className={cx('list-post')}>
                     {listPosts &&
-                        listPosts.map((post) => (
-                            <PostItem
-                                img={post?.thumbnailImage}
-                                key={post?.id}
-                                id={post?.id}
-                                title={post?.title}
-                                content={post?.content}
-                                author={post?.author}
-                                time={post?.createAt?.slice(0, 10)}
-                            />
-                        ))}
+                        listPosts.map((post) => {
+                            return (
+                                <PostItem
+                                    img={post?.thumbnailImage}
+                                    key={post?.id}
+                                    id={post?.id}
+                                    title={post?.title}
+                                    content={post?.content}
+                                    author={post?.author}
+                                    time={formatDate(post?.createAt)}
+                                />
+                            );
+                        })}
                 </div>
             </LayoutBlog>
         </>

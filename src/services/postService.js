@@ -8,3 +8,21 @@ export const getAllPost = async () => {
         console.log(error);
     }
 };
+
+export const getPostById = async (id) => {
+    try {
+        const res = await request.post(`/get-post/${id}`);
+        return res.data;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export const createPost = async (data) => {
+    try {
+        const res = await request.post('/content/post', data);
+        return res.data;
+    } catch (error) {
+        console.log(error);
+    }
+};

@@ -1,5 +1,4 @@
 import * as request from '../utils/request';
-const token = localStorage.getItem("accessToken") || ""
 
 export const register = async (info) => {
     try {

@@ -17,3 +17,20 @@
 .text a {
     color: #000;
 }
+
+.btn-submit {
+    width: 100% !important;
+    padding: 10px 20px !important;
+    height: auto !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #fff !important;
+    background-color: #00a3c8 !important;
+    border-color: #00a3c8 !important;
+    border-radius: 8px !important;
+  }
+  
+  .btn-submit:hover {
+    background-color: #0e8eab !important;
+    border-color: #0e8eab !important;
+  }

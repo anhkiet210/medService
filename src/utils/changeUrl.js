@@ -1,4 +1,5 @@
 const changeUrl = (str) => {
+    console.log('string', str);
     // Chuyển hết sang chữ thường
     str = str.toLowerCase();
 

@@ -1,9 +1,11 @@
 import AccountDetail from '../pages/AccountDetail';
+import AddPost from '../pages/AddPost';
 import Appointment from '../pages/Appointment';
 import Doctors from '../pages/Doctors';
 import FacemakDetection from '../pages/FacemaskDetection';
 import Home from '../pages/Home';
-import InfoDoctor from '../pages/InfoDoctor';
+import InfoDoctor from '../pages/InfoDoctor/[id]';
+import Login from '../pages/Login/inde';
 import MyAccount from '../pages/MyAccount';
 import Orders from '../pages/Orders';
 import OurBlog from '../pages/OurBlog';
@@ -36,8 +38,12 @@ const publicRoutes = [
         component: Doctors,
     },
     {
-        path: '/facemask-detection',
-        component: FacemakDetection,
+        path: '/login',
+        component: Login,
+    },
+    {
+        path: '/add-post',
+        component: AddPost,
     },
 ];
 

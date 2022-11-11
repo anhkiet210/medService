@@ -1,12 +1,13 @@
 import { Button, Col, DatePicker, Form, InputNumber, message, Row, Select, Typography } from 'antd';
 import TextArea from 'antd/lib/input/TextArea';
 import classNames from 'classnames/bind';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ThumnailInfoDoctor from '../../components/ThumnailInfoDoctor';
 import Layout from '../../layouts/Layout';
 import { booking } from '../../services/appointmentService';
 import * as validateMessages from '../../utils/message';
 import styles from './Appointment.module.css';
+import { getAllDoctor } from '../../services/doctorService';
 
 const cx = classNames.bind(styles);
 
@@ -32,19 +33,40 @@ const listDoctors = [
 function Appointment() {
     const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);
+    const [doctors, setDoctors] = useState([]);
+
+    const handleGetAllDoctor = async () => {
+        try {
+            const res = await getAllDoctor();
+            if (res?.status === 'SUCCESS') {
+                setDoctors(res?.data);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    useEffect(() => {
+        handleGetAllDoctor();
+    }, []);
 
     const handleBooking = async (value) => {
         try {
             const dateNow = new Date().getTime();
             const time = value.bookedAt._d.valueOf();
             value.bookedAt = time;
+            if (!localStorage.getItem('accessToken')) {
+                message.warning('You are not logged in');
+                return;
+            }
             if (dateNow < time) {
                 setLoading(true);
                 const res = await booking(value);
-                if (res.status === 'SUCCESS') {
+                if (res && res.status === 'SUCCESS') {
                     message.success('Booking success!');
                     form.resetFields();
                 }
+                console.log('res', res);
                 setLoading(false);
             } else {
                 message.warning('Appointment must be after the current date');
@@ -85,11 +107,12 @@ function Appointment() {
                                             ]}
                                         >
                                             <Select placeholder="Select doctor" className={cx('form-input')}>
-                                                {listDoctors.map((doctor) => (
-                                                    <Select.Option value={doctor.id} key={doctor.id}>
-                                                        {doctor.name}
-                                                    </Select.Option>
-                                                ))}
+                                                {doctors &&
+                                                    doctors?.map((doctor) => (
+                                                        <Select.Option value={doctor?.id} key={doctor?.id}>
+                                                            {doctor?.fullName}
+                                                        </Select.Option>
+                                                    ))}
                                             </Select>
                                         </Form.Item>
                                         <Form.Item
@@ -101,7 +124,8 @@ function Appointment() {
                                             ]}
                                         >
                                             <DatePicker
-                                                showTime={{format: 'HH:mm', minuteStep: 5}}
+                                                showTime={{ format: 'HH:mm', minuteStep: 5 }}
+                                                use12Hours={true}
                                                 className={cx('form-input')}
                                             />
                                         </Form.Item>

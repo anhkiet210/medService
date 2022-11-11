@@ -22,11 +22,6 @@ const menu = [
         name: 'Blog',
         link: '/blog',
     },
-    {
-        id: 4,
-        name: 'Facemask Detection',
-        link: '/facemask-detection',
-    },
 ];
 
 function MenuBar() {
@@ -43,6 +38,9 @@ function MenuBar() {
                                             <NavLink to={item.link}>{item.name}</NavLink>
                                         </Menu.Item>
                                     ))}
+                                    <Menu.Item className={cx('menu-item')}>
+                                        <NavLink to={'/login'}>Login</NavLink>
+                                    </Menu.Item>
                                 </Menu>
                             </Col>
                             <Col md={8} className={cx('wrap-btn')}>
