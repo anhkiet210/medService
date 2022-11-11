@@ -106,18 +106,6 @@ function ModalAuth({ isModalOpen, onCloseModal }) {
                 </Radio.Group>
                 {isNewCustomer === 1 && (
                     <div className={cx('wrap-register-form')}>
-                        <Typography.Text className={cx('text')}>
-                            Please confirm that you would like to request the following appointment:
-                        </Typography.Text>
-                        <div className={cx('info-booking')}>
-                            <Typography.Title level={3} className={cx('name-doctor')}>
-                                Dr. .Anderson (X-Ray)
-                            </Typography.Title>
-                            <Typography.Text className={cx('info-time')}>
-                                <FaCalendarAlt />
-                                September 14, 2022 at 9:00 am – 11:00 am
-                            </Typography.Text>
-                        </div>
                         <Form
                             form={form}
                             onFinish={handleRegister}
@@ -192,34 +180,6 @@ function ModalAuth({ isModalOpen, onCloseModal }) {
                                 />
                             </Form.Item>
 
-                            {/* <Typography.Title level={3} className={cx("form-title")}>
-                Have You Visited Us Before?
-                <Typography.Text>
-                  <FaAsterisk className={cx("icon")} />
-                </Typography.Text>
-              </Typography.Title>
-              <Form.Item
-                style={{
-                  width: "100%",
-                }}
-                name="isVisited"
-              >
-                <Select
-                  defaultValue="lucy"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please choose 1 item from the list!",
-                    },
-                  ]}
-                  // onChange={handleChange}
-                >
-                  <Select.Option value="jack">Jack ccccc</Select.Option>
-                  <Select.Option value="lucy">Lucy</Select.Option>
-                  <Select.Option value="Yiminghe">yiminghe</Select.Option>
-                </Select>
-              </Form.Item> */}
-
                             <Form.Item
                                 label="Your gender"
                                 rules={[
@@ -235,23 +195,6 @@ function ModalAuth({ isModalOpen, onCloseModal }) {
                                     <Radio value={2}> Female </Radio>
                                 </Radio.Group>
                             </Form.Item>
-
-                            {/* <Typography.Title level={3} className={cx("form-title")}>
-                Additional Description
-              </Typography.Title>
-              <Form.Item
-                style={{
-                  width: "100%",
-                }}
-                name="description"
-              >
-                <TextArea
-                  rows={4}
-                  style={{
-                    width: "100%",
-                  }}
-                />
-              </Form.Item> */}
 
                             <Space style={{ marginTop: '30px' }}>
                                 <Button htmlType="submit" className={cx('btn-submit')} loading={loadingReg}>

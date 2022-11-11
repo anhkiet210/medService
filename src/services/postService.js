@@ -11,7 +11,7 @@ export const getAllPost = async () => {
 
 export const getPostById = async (id) => {
     try {
-        const res = await request.post(`/get-post/${id}`);
+        const res = await request.post(`/content/get-post/${id}`);
         return res.data;
     } catch (error) {
         console.log(error);

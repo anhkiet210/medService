@@ -14,7 +14,6 @@ function PostItem(props) {
             <div className={cx('post-item')}>
                 <img src={props?.img} alt="" className={cx('post-item__img')} />
                 <Typography.Title className={cx('post-item__tilte')}>
-                    <Link to={`/blog/abc.1.html`}>{props?.title}</Link>
                     <Link to={`/blog/${changeUrl(props?.title)}.${props?.id}.html`}>{props?.title}</Link>
                 </Typography.Title>
                 <Typography.Title level={4} className={cx('post-item__timedoctor')}>
@@ -23,8 +22,10 @@ function PostItem(props) {
                 </Typography.Title>
                 <Typography.Paragraph className={cx('post-item__discription')}>{props?.content}</Typography.Paragraph>
                 {props?.notMore !== 'notMore' && (
-                    <Link to={`/blog/abc.1.html`} className={cx('post-item__more-detail')}>
-                        {/* <Link to={`/blog/${changeUrl(title)}.${id}.html`} className={cx('post-item__more-detail')}> */}
+                    <Link
+                        to={`/blog/${changeUrl(props?.title)}.${props?.id}.html`}
+                        className={cx('post-item__more-detail')}
+                    >
                         More Details
                     </Link>
                 )}

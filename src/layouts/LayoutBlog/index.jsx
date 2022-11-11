@@ -58,13 +58,15 @@ function LayoutBlog({ children }) {
                 title: value.title,
                 content: value.content,
             };
-            const formData = new FormData();
-            formData.append('file', value.uploadImg);
-            const res = await upload(formData);
-            console.log('img', res);
+            console.log('info', info);
+            // const formData = new FormData();
+            // formData.append('file', value.uploadImg);
+            // const res = await upload(formData);
+            // console.log('img', res);
             const resUpdate = await createPost(info);
             form.resetFields();
             console.log('update', resUpdate);
+            handleShowModal();
             setLoading(false);
         } catch (error) {
             setLoading(false);
